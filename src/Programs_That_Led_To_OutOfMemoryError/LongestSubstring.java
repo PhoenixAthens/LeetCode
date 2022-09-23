@@ -1,6 +1,7 @@
 package Programs_That_Led_To_OutOfMemoryError;//Longest Substring Without Repeating Characters
 import java.util.*;
 public class LongestSubstring {
+    //the new idea was to manipulate the main list of characters and not use checkpoint field
     private static int CheckPoint=0;
     public static int lengthOfLongestSubstring(String s) {
         char[] requiredArray=s.toCharArray();
@@ -26,6 +27,7 @@ public class LongestSubstring {
         System.out.println("Obtained max length: "+secondString);
         System.out.println("Obtained max length: "+lengthOfLongestSubstring("pwwkew"));
         System.out.println("Obtained max length: "+lengthOfLongestSubstring("uhauiwfa"));
+        System.out.println("Obtained max length: "+lengthOfLongestSubstring("poppyutoppolia"));
 
 
     }
@@ -37,7 +39,9 @@ public class LongestSubstring {
                 return listOF;
             }else{
                 listOF.add(main[i]);
+
             }
+            CheckPoint=i;
         }
         return listOF;
     }
