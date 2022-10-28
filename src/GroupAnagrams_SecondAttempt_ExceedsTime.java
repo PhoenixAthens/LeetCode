@@ -5,7 +5,8 @@ public class GroupAnagrams_SecondAttempt_ExceedsTime {
         List<List<String>> main=new ArrayList<>();
         HashMap<String,List<String>> tempMap=new HashMap<>();
         for(int i=0;i<strs.length;i++){
-            Checker(tempMap,strs[i]);
+            //Checker(tempMap,strs[i]);
+
         }
         for(String s:tempMap.keySet()){
             ArrayList<String> temp=new ArrayList();
