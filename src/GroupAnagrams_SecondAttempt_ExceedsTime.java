@@ -32,6 +32,6 @@ public class GroupAnagrams_SecondAttempt_ExceedsTime {
 
     }
     public static void main(String...args){
-        groupAnagrams(new String[]{"eat","tea","tan","ate","nat","bat"});
+        //groupAnagrams(new String[]{"eat","tea","tan","ate","nat","bat"});
     }
 }
