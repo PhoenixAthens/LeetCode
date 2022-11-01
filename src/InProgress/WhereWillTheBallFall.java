@@ -26,29 +26,26 @@ public class WhereWillTheBallFall {
             int I_temp=i;
             for(int j=0;j<grid.length;j++){
                 int SubSum=0;
-                if(I_temp>0){
-                    if(grid[j][I_temp]==1){
-                        SubSum=grid[j][I_temp]+grid[j][I_temp+1];
-                    }else{
-                        SubSum=grid[j][I_temp]+grid[j][I_temp-1];
-                    }
-                }else{
-                    if(I_temp==grid[0].length-1){
-                        I_temp--;
-                        break;
-                    }else if(I_temp<0){
-                        I_temp++;
-                        break;
-                    }
+                if(grid[j][I_temp]==1){
                     SubSum=grid[j][I_temp]+grid[j][I_temp+1];
+                }else{
+                    SubSum=grid[j][I_temp]+grid[j][I_temp-1];
                 }
                 if(SubSum==0){
                     answers[i]=-1;
                     break;
                 }else if(SubSum==2){
                     I_temp++;
+                    if(I_temp>grid[0].length-2 && j!=grid.length-1) {
+                        answers[i]=-1;
+                        break;
+                    }
                 }else{
                     I_temp--;
+                    if(I_temp==0){
+                        answers[i]=-1;
+                        break;
+                    }
                 }
             }
             if(answers[i]!=-1) answers[i]=I_temp;
@@ -88,7 +85,7 @@ public class WhereWillTheBallFall {
      * {{1,1,1,1,1,1},{-1,-1,-1,-1,-1,-1},{1,1,1,1,1,1},{-1,-1,-1,-1,-1,-1}}
      * | \ | \ | \ | \ | \ | \ |
      * | / | / | / | / | / | / |
-     * | \ | \ | \ | \ | \ | \ |
+     * | / | \ | \ | \ | \ | \ |
      * | / | / | / | / | / | / |
      *
      *
