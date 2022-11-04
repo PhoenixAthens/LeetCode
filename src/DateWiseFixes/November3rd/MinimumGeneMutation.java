@@ -10,7 +10,7 @@ public class MinimumGeneMutation {
                 for(int j=0;j<current.length();j++){
                     if(start.charAt(j)!=current.charAt(j)){
                         if(i!=Bank.size()-1){
-                            if(cu)
+
                         }
                     }
                 }
