@@ -11,14 +11,14 @@ public class MakeTheStringGreat {
                     provided.remove(i+1);
                     provided.remove(i);
                     System.out.println(provided);
-                    i=-1;
+                    i-=1;
                 }
             }else if(get.hashCode()>=97){
                 if(provided.get(i+1).equals(get.toUpperCase())){
                     provided.remove(i+1);
                     provided.remove(i);
                     System.out.println(provided);
-                    i=-1;
+                    i-=1;
                 }
             }
         }
@@ -28,6 +28,6 @@ public class MakeTheStringGreat {
         return build.toString();
     }
     public static void main(String...args){
-        System.out.println(new MakeTheStringGreat().makeGood("Hvh"));
+        System.out.println(new MakeTheStringGreat().makeGood("abBAcC"));
     }
 }
