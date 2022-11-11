@@ -3,6 +3,8 @@ import java.util.*;
 
 public class RemoveDuplicatesFromSortedArray_2 {
     //Time: 12ms, memory=48.8MB
+    //** without code at line 17
+    //Time: 2ms, Memory=48.3MB
     public int removeDuplicates(int[] nums) {
         //[0,0,1,1,1,2,2,3,3,4]
         int[] cope=Arrays.copyOf(nums,nums.length);
@@ -13,7 +15,7 @@ public class RemoveDuplicatesFromSortedArray_2 {
                 j++;
             }
         }
-        System.out.println(Arrays.toString(nums));
+        //System.out.println(Arrays.toString(nums));//this line of code was taking time
         return j;
     }
     public static void main(String...args){
