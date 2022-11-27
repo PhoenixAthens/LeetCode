@@ -33,7 +33,7 @@ public class SumOfSubarrayMinimums {
 
     }
     public static void main(String...args){
-        System.out.println(new SumOfSubarrayMinimums().sumSubarrayMins(new int[]{11,81,94,43,3}));
+        System.out.println(new SumOfSubarrayMinimums().sumSubarrayMins(new int[]{36,74,84,92,17,68,97,6,68,85}));
     }
 
     //Experimental
