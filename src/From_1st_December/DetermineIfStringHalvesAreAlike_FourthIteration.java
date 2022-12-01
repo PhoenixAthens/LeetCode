@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DetermineIfStringHalvesAreAlike_FourthIteration {
+    /**
+     * Runtime: 83 ms, Beats 5.5%
+     * Memory: 47.5 Ms, Beats 5.34%
+     */
     public static boolean halvesAreAlike(String s) {
         int f0=0;
         int f1=0;
@@ -23,7 +27,6 @@ public class DetermineIfStringHalvesAreAlike_FourthIteration {
             i++;
         }
         f1=main;
-        System.out.println(f0+":"+f1);
         return f1 == f0;
     }
     public static void main(String...args){
