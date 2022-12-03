@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class SortCharactersByFrequency {
     //RUNTIME: 153ms beats 19.48%, Memory:57.4MB beats 57.4%
     public String frequencySort(String s) {
-        TreeMap<String,Integer> counter=new TreeMap<>();
+        TreeMap<String,Integer> counter=new TreeMap<>(); //using HashMap reduces runtime to 118ms
         for(String i:s.split("")){
             if(counter.containsKey(i)){
                 counter.put(i,counter.get(i)+1);
