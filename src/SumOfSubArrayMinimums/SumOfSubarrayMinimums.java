@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicInteger;
+package SumOfSubArrayMinimums;
 
 public class SumOfSubarrayMinimums {
     //worked 77/87 test cases

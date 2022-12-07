@@ -1,3 +1,5 @@
+package SumOfSubArrayMinimums;
+
 public class SumOfSubarrayMinimums_SecondIteration {
     //works for 77/87 test cases
     //fails at the 77th "Time Limit Exceeded!!"
