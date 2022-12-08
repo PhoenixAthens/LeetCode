@@ -2,6 +2,7 @@ package From_8th_December;
 import java.util.*;
 public class Left_Similar_Tree {
     //Runtime: 1ms beats 77.58%, Memory 39.98 beats 94.3%
+    //using ArrayList results in the same Runtime!!
     public class TreeNode {
         int val;
         TreeNode left;
@@ -30,8 +31,6 @@ public class Left_Similar_Tree {
         }
         if(root.left==null && root.right==null)
             node.push(root.val);
-    }
-    public static void main(String...args){
     }
     //                        3
     //                      /   \
