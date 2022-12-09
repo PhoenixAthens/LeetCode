@@ -4,6 +4,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MaximumDifferenceBetweenNodeAndAncestor {
     // Runtime:179 ms beats 7.2%, Memory: 42.2MB beats 76.13%
+    // Some optimization, and a few re-runs results in Runtime reduction from
+    // 179ms to 92 ms
+    // The solution is still slower than what it can be!
+    //
+    // eliminating the use of field for storing difference might help!
+
     public static class TreeNode {
        int val;
        TreeNode left;
