@@ -1,10 +1,9 @@
 package From_12th_December;
 
-import java.util.ArrayList;
 
 public class ClimbingStairs {
     //Runtime: 0ms, Memory: 40.7MB
-    ArrayList<Integer> list=new ArrayList<>();
+
     public int climbStairs(int n) {
         return cheat(n+1);
     }
