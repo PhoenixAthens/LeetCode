@@ -1,4 +1,4 @@
-package From_10th_December;
+package From_10th_December_UnderProgress;
 import java.util.ArrayList;
 public class MaximumProductOfSplitBinaryTree {
     //primitive, based on test-cases
