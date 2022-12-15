@@ -2,6 +2,8 @@ package From_14th_December_StillWorkingOnIT;
 
 public class House_Robber_SecondIteration {
     //[4,1,2,7,5,3,1]
+    //works for 42/68
+    //fails on 43rd test case
     public static int rob(int[] nums){
         int len=nums.length;
         if(len==1){
