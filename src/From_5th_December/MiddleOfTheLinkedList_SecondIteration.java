@@ -1,4 +1,4 @@
-package From_December_5th;
+package From_5th_December;
 import java.util.ArrayList;
 public class MiddleOfTheLinkedList_SecondIteration {
     //Time: 0ms, Memory: 41.4MB

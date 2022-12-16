@@ -1,4 +1,4 @@
-package From_December_5th;
+package From_5th_December;
 
 public class MiddleOfTheLinkedList {
     //Runtime: 0ms beats 100%, Memory:39.8MB beats 91.4%
