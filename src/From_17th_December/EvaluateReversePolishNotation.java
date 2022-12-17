@@ -1,7 +1,10 @@
 package From_17th_December;
 import java.util.*;
 public class EvaluateReversePolishNotation {
-    //Runtime: 16ms beats 43.83%, Memory: 44.8MB beats 12.67%
+    //first run
+    //Runtime: 16 ms beats 43.83%, Memory: 44.8 MB beats 12.67%
+    //Second run
+    //Runtime: 6 ms beats 89.26%, Memory: 42.3 MB beats 80.26%
     public static int evalRPN(String[] tokens) {
         ArrayDeque<String> list=new ArrayDeque<>();//ArrayDeque is faster than Stack
         for(int i=0;i<tokens.length;i++){//with stack the runtime is 19ms 3ms slower than ArrayDeque
