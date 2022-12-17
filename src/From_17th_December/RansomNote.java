@@ -14,7 +14,7 @@ public class RansomNote {
         String[] newOne=new String[maxLen];
         System.arraycopy(mag,0,newOne,0,maxLen);
         return Arrays.equals(newOne,note);*/
-        ArrayList<String> note=new ArrayList<>(Arrays.asList(ransomNote.split("")));
+        ArrayList<String> note=new ArrayList<>(Arrays.asList(ransomNote.split("")));//Using LinkedList doesn't help!!
         String[] mag=magazine.split("");
         for(String s:mag){
             note.remove(s);

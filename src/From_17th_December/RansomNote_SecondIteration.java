@@ -1,14 +1,25 @@
 package From_17th_December;
 import java.util.*;
 public class RansomNote_SecondIteration {
-    //Runtime: 84ms
+    //Runtime: 174ms
     public boolean canConstruct(String ransomNote, String magazine) {
-        LinkedList<String> note=new LinkedList<>(Arrays.asList(ransomNote.split("")));
-        String[] mag=magazine.split("");
-        for(String s:mag){
-            note.remove(s);
-            if(note.isEmpty())return true;
+        if(ransomNote.equals(magazine))return true;
+        else{
+            int count=0;
+            String[] note=ransomNote.split("");
+            int len= note.length;;
+            String[] mag=magazine.split("");
+            for(int i=0;i<len;i++){
+                String present=note[i];
+                for(int j=0;j<mag.length;j++){
+                    if(mag[j].equals(present)){
+                        count++;
+                        mag[j]="IQ";
+                        break;
+                    }
+                }
+            }
+            return count==len;
         }
-        return false;
     }
 }
