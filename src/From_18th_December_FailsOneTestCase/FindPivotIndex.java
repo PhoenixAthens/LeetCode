@@ -1,5 +1,5 @@
-package From_18th_December;
-import java.util.Arrays;
+package From_18th_December_FailsOneTestCase;
+
 public class FindPivotIndex {
     //First run:
     //Runtime: 2ms beats 80.89%, Memory: 52.5MB beats 42.6%
