@@ -1,6 +1,6 @@
 package From_19th_December;
 
-public class FindIfPathExistInGraph {
+public class FindIfPathExistsInGraph_SecondIteration {
     //Works for 19/27 test cases
     // fails at 20th test case
     //fails at: [[4,3],[1,4],[4,8],[1,7],[6,4],[4,2],[7,4],[4,0],[0,9],[5,4]]
