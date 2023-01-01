@@ -30,7 +30,7 @@ public class NumberOfStepsToReduceANumberToZero {
                    count++;
                }
            }
-           else num-=1;
+           else num-- ;
            count++;
         }
         return count;
