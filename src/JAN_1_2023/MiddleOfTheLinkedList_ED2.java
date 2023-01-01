@@ -2,7 +2,7 @@ package JAN_1_2023;
 // using pointers
 // Runtime: 0ms beats 100%, Memory: 39.9MB
 
-public class MiddleOfTheLinkedList_SecondIteration {
+public class MiddleOfTheLinkedList_ED2 {
      public class ListNode {
          int val;
          ListNode next;
