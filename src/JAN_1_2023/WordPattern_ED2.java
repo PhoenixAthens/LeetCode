@@ -2,7 +2,12 @@ package JAN_1_2023;
 import java.util.*;
 
 public class WordPattern_ED2 {
-    // runtime: 2ms beats 38.63%, Memory: 40.5MB beats 66.98MB;
+    // first iteration
+    // runtime: 2ms beats 38.63%, Memory: 40.5MB beats 66.98%
+    // second iteration
+    // runtime: 2ms beats 38.63%, Memory: 40.1MB beats 90.3%
+    // Third Iteration
+    // runtime: 2ms beats 38.63%, Memory: 40.4MB beats 70.29%
     public boolean wordPattern(String pattern, String s) {
         int[] first=createScheme(pattern.split(""));
         int[] second=createScheme(s.split(" "));
@@ -21,7 +26,7 @@ public class WordPattern_ED2 {
                 result[count++]=val++;
             }
         }
-        System.out.println(Arrays.toString(result));
+        //System.out.println(Arrays.toString(result));
         return result;
     }
     public static void main(String...args){
