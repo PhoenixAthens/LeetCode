@@ -8,10 +8,15 @@ public class NumberOfStepsToReduceANumberToZero_ED2 {
         int steps=0;
         while(num>0){
             if((num&1)==1)num--;
-            else num/=2;
+            else num>>=1;
             steps++;
         }
+
         return steps;
+
+    }
+    public static void main(String...args){
+        System.out.println(Integer.toBinaryString(35));
 
     }
 }

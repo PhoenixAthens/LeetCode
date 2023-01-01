@@ -2,7 +2,7 @@ package From_17th_December;
 
 import java.util.ArrayDeque;
 
-public class SecondIteration {
+public class ReversePolishNotation_SecondIteration {
     public static void main(String...args){
         int num=9;
         System.out.println("+".hashCode());
