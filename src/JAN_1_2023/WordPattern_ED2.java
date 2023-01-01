@@ -9,6 +9,7 @@ public class WordPattern_ED2 {
     // Third Iteration
     // runtime: 2ms beats 38.63%, Memory: 40.4MB beats 70.29%
     public boolean wordPattern(String pattern, String s) {
+        if (pattern.length()!= s.split(" ").length) return false;//this line of code reduces memory consumption by some percent!!
         int[] first=createScheme(pattern.split(""));
         int[] second=createScheme(s.split(" "));
         return Arrays.equals(first,second);
