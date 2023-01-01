@@ -1,7 +1,6 @@
 package JAN_1_2023;
-import java.util.Arrays;
 import java.util.*;
-public class Word_Pattern {
+public class WordPattern_ED1 {
     //works for 35/37 test cases
     public boolean wordPattern(String pattern, String s) {
         if(pattern.length()==1 && s.length()!=1){
@@ -48,7 +47,7 @@ public class Word_Pattern {
         //System.out.println(Arrays.toString(array));
         //System.out.println(new Word_Pattern().wordPattern("abba","dog cat cat dog"));
         //System.out.println(new Word_Pattern().wordPattern("abba","dog cat cat fish"));
-        System.out.println(new Word_Pattern().wordPattern("aaaa","dog cat cat dog"));
+        System.out.println(new WordPattern_ED1().wordPattern("aaaa","dog cat cat dog"));
     }
 
 }
