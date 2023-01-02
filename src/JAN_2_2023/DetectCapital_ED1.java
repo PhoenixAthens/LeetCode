@@ -1,6 +1,6 @@
 package JAN_2_2023;
 
-public class DetectCapital {
+public class DetectCapital_ED1 {
     // First Iteration
     //Runtime: 2ms beats 69.98%, Memory: 41.1MB beats 68.17%
     // Second Iteration
@@ -16,8 +16,8 @@ public class DetectCapital {
         return word.equals(t1)||word.equals(t2)||word.equals(t3);
     }
     public static void main(String...args){
-        System.out.println((new DetectCapital().detectCapitalUse("USA")));
-        System.out.println((new DetectCapital().detectCapitalUse("FlaG")));
-        System.out.println((new DetectCapital().detectCapitalUse("G")));
+        System.out.println((new DetectCapital_ED1().detectCapitalUse("USA")));
+        System.out.println((new DetectCapital_ED1().detectCapitalUse("FlaG")));
+        System.out.println((new DetectCapital_ED1().detectCapitalUse("G")));
     }
 }
