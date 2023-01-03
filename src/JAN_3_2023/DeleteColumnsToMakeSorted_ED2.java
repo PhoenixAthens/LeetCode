@@ -22,6 +22,14 @@ public class DeleteColumnsToMakeSorted_ED2 {
         }
         return count;
     }
+    /* Intellij created the following code
+    //Runtime: 40ms to 65ms, Memory: 50.8MB
+    public int minDeletionSize(String[] strs) {
+        int count= (int) IntStream.range(0, strs[0].length()).filter(i -> IntStream.range(1, strs.length).anyMatch(j -> strs[j].charAt(i) < strs[j - 1].charAt(i))).count();
+        return count;
+    }
+    *
+    * */
     public static void main(String...args){
         System.out.println(new DeleteColumnsToMakeSorted_ED2().minDeletionSize(new String[]{"cba","daf","ghi"}));
         System.out.println(new DeleteColumnsToMakeSorted_ED2().minDeletionSize(new String[]{"a","b"}));
