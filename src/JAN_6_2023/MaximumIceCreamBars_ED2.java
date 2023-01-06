@@ -1,8 +1,14 @@
-import java.util.*;
-public class MaxIceCreams {
+package JAN_6_2023;
+import java.util.Arrays;
+public class MaximumIceCreamBars_ED2 {
+    //First Iteration
+    //Runtime:30ms beats 96.68 %, Memory: 81.5MB beats 5.21%
+    //Second Iteration
+    //Runtime:22ms beats 97.39%, Memory: 81MB beats 5.79%
+    //
     public int maxIceCream(int[] costs, int coins) {
         Arrays.parallelSort(costs);
-        if(coins==0 || coins<costs[0]){
+        if(coins<costs[0]){
             return 0;
         }
         int howMany=0;
@@ -12,8 +18,5 @@ public class MaxIceCreams {
             else howMany++;
         }
         return howMany;
-    }
-    public static void main(String...args){
-        System.out.println(new MaxIceCreams().maxIceCream(new int[]{1,6,3,1,2,5},20));
     }
 }
