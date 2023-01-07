@@ -16,7 +16,7 @@ public class GasStation {
         }
         ArrayList<Integer> indexes=new ArrayList<>();
         for(int i=0;i< gas.length;i++){
-            if(gas[i]>=cost[i]){
+            if(gas[i]>cost[i]){
                 indexes.add(i);
 
             }
