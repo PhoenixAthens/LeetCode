@@ -4,10 +4,19 @@ import java.util.ArrayList;
 
 public class GasStation {
     //works for 22/37 test cases
+    //After minor tweaks
+    //works for 36/37 test cases
+    //Another minor tweak
+    //Runtime: 824ms beats 5.5%, Memory: 55.3MB beats 99.37%
+
     public int canCompleteCircuit(int[] gas, int[] cost) {
+        if(gas.length==1){
+            if(gas[0]>=cost[0])return 0;
+            return -1;
+        }
         ArrayList<Integer> indexes=new ArrayList<>();
         for(int i=0;i< gas.length;i++){
-            if(gas[i]>cost[i]){
+            if(gas[i]>=cost[i]){
                 indexes.add(i);
 
             }
@@ -18,13 +27,16 @@ public class GasStation {
             if(i==0){
                 for(;i<gas.length;i++){
                     sum+=(gas[i]-cost[i]);
+                    if(sum<0)break;
                 }
             }else{
                 while(true){
                     sum+=(gas[i]-cost[i]);
+                    if(sum<0)break;
                     if(i==value-1)break;
                     i++;
                     if(i== gas.length)i=0;
+
                 }
             }
             if(sum>=0){
