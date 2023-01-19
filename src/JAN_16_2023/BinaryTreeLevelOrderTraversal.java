@@ -26,24 +26,27 @@ public class BinaryTreeLevelOrderTraversal {
          }
          return main;
     }
+    //Earlier in every single recursive step, a new queue was being created, not anymore!
+    //However this doesn't improve the program's performance to any considerable extent!
     public void verse(ArrayDeque<TreeNode> nodes, List<List<Integer>> list){
-
-        ArrayDeque<TreeNode> nodeNext=new ArrayDeque<>();
+        int len=nodes.size();
+        //ArrayDeque<TreeNode> nodeNext=new ArrayDeque<>();
         LinkedList<Integer> lol=new LinkedList<>();
-        while(!nodes.isEmpty()){
+        while(len>0){
             TreeNode present=nodes.pollFirst();
             if(present.left!=null &&present.right!=null){
-                nodeNext.add(present.left);
-                nodeNext.add(present.right);
+                nodes.add(present.left);
+                nodes.add(present.right);
             }else if(present.left!=null){
-                nodeNext.add(present.left);
+                nodes.add(present.left);
             }else if(present.right!=null){
-                nodeNext.add(present.right);
+                nodes.add(present.right);
             }
             lol.add(present.val);
+            len--;
         }
         list.add(lol);
-        if(!nodeNext.isEmpty())verse(nodeNext,list);
+        if(!nodes.isEmpty())verse(nodes,list);
     }
     /*public void finder(int level,HashMap<Integer,List<TreeNode>>map){
          List<TreeNode> list=map.get(level-1);
