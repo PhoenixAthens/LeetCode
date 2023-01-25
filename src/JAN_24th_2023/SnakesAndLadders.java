@@ -12,13 +12,16 @@ public class SnakesAndLadders {
             rowIndex[place]=i;
             place++;
         }
+        return 0;
+    }
+    public int player(int[][] board, int[] rowIndex, int modValue){
         int count=0;
         float tempCount=0;
         int[] result=null;
         int i=board.length-1;
         int j=0;
         for(;i>=0;i--){
-            if(i%2==1){
+            if(rowIndex[i]%2==1){
                 for(;j<modValue;j++){
                     if(board[i][j]!=-1){
                         if(tempCount<=6){
