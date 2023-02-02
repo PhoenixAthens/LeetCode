@@ -1,14 +1,10 @@
 package February_2023;
-
-import java.util.ArrayList;
-import java.util.Stack;
 //Date: 4th Feb, 2023
 public class GreatestCommonDivisorOfStrings {
     //Runtime: 3ms beats 22%, Memory: 41.9MB beats 78%;
     public String gcdOfStrings(String str1, String str2) {
         int ln1=str1.length();
         int ln2=str2.length();
-        ArrayList<String> found=new ArrayList<>();
         if(ln2<=ln1)return user(str1,str2,ln1,ln2);
         else return user(str2,str1,ln2,ln1);
 
