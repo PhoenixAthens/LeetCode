@@ -35,5 +35,17 @@ public class VerifyingAnAlienDictionary {
         System.out.println("Result1: "+result3);
         System.out.println("Result2: "+result2);
         System.out.println("Result3: "+result1);
+        takeString("Hello","Tschuss","Momma","Whattt");
     }
+    public static void takeString(String... names){
+        System.out.println(names[0]);
+    }
+    //142
+    //
+    //
+    //The three dots can only be used in a method argument, and are called 'varargs'. It means you can pass in an array of parameters without explicitly creating the array.
+    //
+    //private void method(String[] args) {} is called like method(new String[]{"first", "second"});
+    //
+    //private void method(String... args) {} is called like method("first", "second");
 }
