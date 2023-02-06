@@ -1,7 +1,7 @@
 package February_2023;
 
 import java.util.Arrays;
-//Date: 6th february, 2023
+//Date: 6th february 2023
 public class ShuffleTheArray {
     //Runtime: 0ms beats 100%, Memory: 42MB beats 98.38%;
     public int[] shuffle(int[] nums, int n) {
