@@ -1,8 +1,25 @@
 package February_2023.Experimentals;
-
+import java.util.HashSet;
 public class FruitIntoBasket_AlternateFifth {
+    //Works for 90/91 test cases
     public int totalFruit(int[] fruits){
-        return 0;
+        if(fruits.length==1)return 1;
+        int start=0;
+        int size=0;
+        HashSet<Integer> make=new HashSet<>();
+        while(start!=fruits.length-1){
+            int j=start;
+            for(;j<fruits.length;j++){
+                make.add(fruits[j]);
+                if(make.size()>2)break;
+
+            }
+            make=new HashSet<>();
+            size=Math.max(j-start,size);
+            start++;
+            if(j==fruits.length)break;
+        }
+        return size;
     }
     public static void main(String...args){
         var val1=new FruitIntoBasket_AlternateFifth().totalFruit(new int[]{1,2,1});
