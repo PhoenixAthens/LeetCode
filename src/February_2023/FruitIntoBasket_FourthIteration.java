@@ -44,12 +44,14 @@ public class FruitIntoBasket_FourthIteration {
         //SubArrays = [0,0,1,1]
         var val6=new FruitIntoBasket_FourthIteration().totalFruit(new int[]{1,0,1,4,1,4,1,2,3});//expected 5, output=4
         //SubArrays = [1,0,1], [1,4,1,4,1],
+        var val7=new FruitIntoBasket_FourthIteration().totalFruit(new int[]{0,1,6,6,4,4,6});//expected 5, got 4
         System.out.println(val1);
         System.out.println(val2);
         System.out.println(val3);
         System.out.println(val4);
         System.out.println(val5);
         System.out.println(val6);
+        System.out.println(val7);
 
 
     }
