@@ -1,23 +1,33 @@
 package February_2023.Experimentals;
 import java.util.HashSet;
 public class FruitIntoBasket_AlternateFifth {
-    //Works for 90/91 test cases
+    //Works!!
+    //Runtime: 24ms beats 72.19%, Memory: 52.8MB beats 5.26%
     public int totalFruit(int[] fruits){
         if(fruits.length==1)return 1;
         int start=0;
         int size=0;
         HashSet<Integer> make=new HashSet<>();
+        int prev=0;
         while(start!=fruits.length-1){
             int j=start;
             for(;j<fruits.length;j++){
                 make.add(fruits[j]);
                 if(make.size()>2)break;
+                else prev=fruits[j];
 
             }
             make=new HashSet<>();
             size=Math.max(j-start,size);
-            start++;
             if(j==fruits.length)break;
+            else{
+                j-=1;
+                while(j>=0){
+                    if(fruits[j]!=prev)break;
+                    j--;
+                }
+                start=j+1;
+            }
         }
         return size;
     }
