@@ -5,22 +5,25 @@ import java.util.List;
 
 public class IPO_FirstIteration {
     //works for 22/35 test cases!
-    //fails at k=11, w=11, profits=[1,2,3], capital=[11,12,13], expected 17, got 12
+    //Improvements:
+    //works for 31/35 test cases!
+    //Improvement:
+    //works for 32/35 test cases
+    //Time limit exceeds at 33rd test case!!
     public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
         HashMap<Integer, ArrayList<Integer>> record=new HashMap<>();
-        int result=w;
         for(int i=0;i<profits.length;i++){
             if(record.containsKey(capital[i]))
                 record.get(capital[i]).add(profits[i]);
             else
                 record.put(capital[i],new ArrayList<>(List.of(profits[i])));
         }
-        //System.out.println(record);
+        System.out.println(record);
         while(k!=0){
             int tempW=w;
             int maxProfit=0;
-            int foundAtKey=-23;
-            int keyValue=-23;
+            int foundAtKey=-1001;
+            int keyValue=-1001;
             for(int i:record.keySet()){
                 if(i<=w){
                     ArrayList<Integer> present=record.get(i);
@@ -28,24 +31,23 @@ public class IPO_FirstIteration {
                         if(present.get(j)>=maxProfit){
                             maxProfit=present.get(j);
                             keyValue=j;
+                            tempW=i;
+                            foundAtKey=i;
                         }
                     }
-                    tempW=i;
-                    foundAtKey=i;
                 }
             }
-            if(foundAtKey==-23 || keyValue==-23)break;
-            result+=maxProfit;
-            w=w-tempW+result;
+            if(foundAtKey==-1001 || keyValue==-1001)break;
+            w+=maxProfit;
             k--;
             ArrayList<Integer> thisTime=record.get(foundAtKey);
             if(thisTime.size()==1){
                 record.remove(foundAtKey);
             }else{
-                thisTime.set(keyValue,-23);
+                thisTime.set(keyValue,-1001);
             }
         }
-        return result;
+        return w;
     }
     public static void main(String...args){
         var value=new IPO_FirstIteration().findMaximizedCapital(2,0,new int[]{1,2,3},new int[]{0,1,1});
