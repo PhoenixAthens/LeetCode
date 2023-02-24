@@ -37,7 +37,7 @@ public class IPO_FirstIteration {
                     }
                 }
             }
-            if(foundAtKey==-1001 || keyValue==-1001)break;
+            if(foundAtKey==-1001)break;
             w+=maxProfit;
             k--;
             ArrayList<Integer> thisTime=record.get(foundAtKey);
