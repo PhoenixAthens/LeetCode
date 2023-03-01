@@ -3,7 +3,7 @@ package February_2023;
 
 import java.util.*;
 //Still working on IT!
-public class FindDuplicateSubtrees {
+public class FindDuplicateSubtrees{
     public static class TreeNode{
         int val;
         TreeNode left;
@@ -52,6 +52,7 @@ public class FindDuplicateSubtrees {
         ArrayList<ArrayList<Integer>> arr3=new ArrayList<>();
         arr3.add(arr1);
         System.out.println(arr3.contains(arr2));
+
 
     }
 }
