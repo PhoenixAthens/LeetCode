@@ -16,34 +16,39 @@ public class FindDuplicateSubtrees{
             this.left=left;
         }
     }
+
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         if(root==null)return new ArrayList<>();
         else{
-            Stack<ArrayList<Integer>> list=new Stack<>();
-            ArrayList<Integer> list2=new ArrayList<>();
-            List<TreeNode> ans=new ArrayList<>();
-            GoDown(root,list,ans);
-            return ans;
+            ArrayList<ArrayList<Integer>> list=new ArrayList<>();
+            ArrayList<Integer> temp=new ArrayList<>();
+            List<TreeNode> answer=new ArrayList<>();
+            GoDown(root,list,answer,temp);
+            return answer;
         }
     }
-    public void GoDown(TreeNode root,Stack<ArrayList<Integer>> list,List<TreeNode> answer){
+    public void GoDown(TreeNode root,ArrayList<ArrayList<Integer>> list,List<TreeNode> answer,ArrayList<Integer> temp){
         if(root.left!=null){
-            GoDown(root.left,list,answer);
-            ArrayList<Integer> temp=list.peek();
-            temp.add(root.left.val);
-            if(list.contains(temp))answer.add(root.left);
-            else list.push(temp);
+            GoDown(root.left,list,answer,temp);
+            ArrayList<Integer> temp2=new ArrayList<>(temp);
+            temp2.add(root.val);
+            temp.add(root.val);
+            if(list.contains(temp2))answer.add(root.left);
+            list.add(temp2);
         }
         if(root.right!=null){
-            GoDown(root.right,list,answer);
-            ArrayList<Integer> temp=list.peek();
-            temp.add(root.right.val);
-            if(list.contains(temp))answer.add(root.right);
-            else list.push(temp);
+            temp=new ArrayList<>();
+            GoDown(root.right,list,answer,temp);
+            ArrayList<Integer> temp2=new ArrayList<>(temp);
+            temp2.add(root.val);
+            temp.add(root.val);
+            if(list.contains(temp2))answer.add(root.right);
+            list.add(temp2);
         }
-        if(root.left==null && root.right==null){
-           ArrayList<Integer> temp=new ArrayList<>(List.of(root.val));
-           list.push(temp);
+        if(root.left!=null && root.right!=null){
+            temp.add(root.val);
+            if(list.contains(temp))answer.add(root);
+            else list.add(temp);
         }
     }
     public static void main(String...args){
