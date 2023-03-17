@@ -22,15 +22,4 @@ public class Check_Completeness_Of_BinaryTree {
         }
         return true;
     }
-
-    public static void main(String...args){
-        ArrayDeque<> queue=new ArrayDeque<>();
-        queue.offer(null);
-        queue.offer(null);
-        queue.offer(null);
-        //queue.addLast(null);
-        System.out.println(queue.isEmpty());
-        //System.out.println(queue.poll());
-
-    }
 }
