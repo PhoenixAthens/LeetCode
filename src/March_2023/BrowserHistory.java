@@ -2,9 +2,15 @@ package March_2023;
 //Date: March 18th 2023
 public class BrowserHistory {
     //Runtime: 62ms beats 36.48%, Memory: 50.7MB beats 22.81%
+    //Second Iteration
+    //Runtime: 60ms beats 46.56%, Memory: 50.7MB beats 22.81%
+    //Third Iteration
+    //Runtime: 59ms beats 54.85%, Memory: 50.4MB beats 53.18%
+
+
     public class TreeNode {
-        private String url;
-        private TreeNode left_prev;
+        String url;
+        TreeNode left_prev;
         private TreeNode right_next;
 
         private TreeNode(String url) {
