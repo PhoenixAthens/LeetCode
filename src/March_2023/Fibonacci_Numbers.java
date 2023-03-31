@@ -13,7 +13,4 @@ public class Fibonacci_Numbers {
             return new int[]{calc[0]+calc[1],calc[0]};
         }
     }
-    public static void main(String...args){
-        //System.out.println(fib());
-    }
 }
