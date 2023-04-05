@@ -5,6 +5,15 @@ public class Minimize_Maximum_Of_Array {
     public int minimizeArrayValue(int[] nums) {
         int[] max_N_Index=findMax(nums);
         while(max_N_Index[0]!=0){
+            nums[max_N_Index[0]]-=1;
+            nums[max_N_Index[0]-1]+=1;
+            max_N_Index=findMax(nums);
+        }
+        return max_N_Index[1];
+        /*
+        * public int minimizeArrayValue(int[] nums) {
+        int[] max_N_Index=findMax(nums);
+        while(max_N_Index[0]!=0){
             for(int i=max_N_Index[0];i<nums.length;i+=2){
                 nums[i]-=1;
                 nums[i-1]+=1;
@@ -13,7 +22,9 @@ public class Minimize_Maximum_Of_Array {
             if(max_N_Index[1]==1)break;
         }
         return max_N_Index[1];
+        }*/
     }
+
     public int[] findMax(int[] nums){
         int[] max = {0,0};
         for(int i=0;i<nums.length;i++){
