@@ -1,12 +1,10 @@
 package April_2023;
 
 public class RotateArray {
-    //Runtime: 1ms beats 53.88%, Memory: 58.2MB beats 90.48%
+    //Runtime: 1ms beats 53.88%, Memory: 57.8MB beats 96.75%
     public void rotate(int[] nums, int k) {
         int n=nums.length;
-        int rotate;
-        if(k>n)rotate=k%(n);
-        else rotate = k;
+        int rotate=k%(n);
         if(rotate!=0){
             int[] temp=new int[n];
             int start=n-rotate;
