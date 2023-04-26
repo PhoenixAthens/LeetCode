@@ -2,7 +2,7 @@ package April_2023;
 
 public class SwapNodesInPairs {
     //Runtime: 0ms beats 100%, Memory: 40.4MB beats 41.82%
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
         ListNode() {}
