@@ -28,6 +28,37 @@ public class Dota2_Senate {
             }
         }
     }
+    //Runtime: 3ms, Memory: 42.2MB
+    public String predictPartySummary_Alternate(String senate){
+        char[] senators=senate.toCharArray();
+        boolean flag1=true;
+        boolean flag2=true;
+        int temperature=0;
+        while(flag1 && flag2){
+            flag1=false;
+            flag2=false;
+            for(int i=0;i<senators.length;i++){
+                if(senators[i]=='R'){
+                    if(temperature<0){
+                        senators[i]=0;
+                    }else{
+                        flag1=true;
+                        temperature++;
+                    }
+
+                }else if(senators[i]=='D'){
+                    if(temperature>1){
+                        senators[i]=0;
+                    }else{
+                        flag2=true;
+                        temperature--;
+                    }
+
+                }
+            }
+        }
+        return flag1?"Radiant":"Dire";
+    }
     public static void main(String...args){
         System.out.println(new Dota2_Senate().predictPartyVictory("RD"));
         System.out.println(new Dota2_Senate().predictPartyVictory("RDD"));
