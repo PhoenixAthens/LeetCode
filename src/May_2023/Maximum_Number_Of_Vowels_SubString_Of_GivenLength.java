@@ -12,7 +12,7 @@ public class Maximum_Number_Of_Vowels_SubString_Of_GivenLength {
         for(int i=k;i<arr.length;i++){
             count+=(arr[i]==97||arr[i]==101||arr[i]==105||arr[i]==111||arr[i]==117)?1:0;
             count-=(arr[i-k]==97||arr[i-k]==101||arr[i-k]==105||arr[i-k]==111||arr[i-k]==117)?1:0;
-            answer=(answer>count)?answer:count;
+            answer=(answer>count)?answer:count; //using Math.max increases runtime by 2ms.
         }
         return answer;
     }
