@@ -59,7 +59,10 @@ public class SpiralMatrix_II {
         return result;
     }
     public static void main(String...args){
-        System.out.println(new SpiralMatrix_II().generateMatrix(2));
+        int[][] matrix = new SpiralMatrix_II().generateMatrix(100);
+        for(int[] arr:matrix){
+            System.out.println(java.util.Arrays.toString(arr));
+        }
     }
 
 }
