@@ -19,8 +19,10 @@ public class MaximumTwinSumOfLinkedList {
         return maxSum;
     }
     //Runtime: 52ms, Memory: 64.8MB
+    //Using ArrayDeque
+    //Runtime: 15ms, Memory: 65.8MB
     public int pairSum_SecondAttempt(ListNode head) {
-        Stack<ListNode> stack=new Stack<>();
+        ArrayDeque<ListNode> stack = new ArrayDeque<>();
         ListNode decoy=head;
         while(decoy!=null){
             stack.push(decoy);
@@ -34,6 +36,25 @@ public class MaximumTwinSumOfLinkedList {
             maxSum = (maxSum<tempSum)?tempSum:maxSum;
             head=head.next;
             i++;
+        }
+        return maxSum;
+    }
+    //Runtime: 13ms, Memory: 66.2MB
+    public int pairSum_ThirdAttempt(ListNode head) {
+        ListNode slow=head;
+        ListNode halfMover=head;
+        ArrayDeque<Integer> values = new ArrayDeque<>();
+        while(halfMover!=null && halfMover.next!=null){
+            values.push(slow.val);
+            slow=slow.next;
+            halfMover=halfMover.next.next;
+
+        }
+        int maxSum=0;
+        while(slow!=null){
+            int tempSum = slow.val+values.pop();
+            maxSum=(maxSum>tempSum)?maxSum:tempSum;
+            slow=slow.next;
         }
         return maxSum;
     }
