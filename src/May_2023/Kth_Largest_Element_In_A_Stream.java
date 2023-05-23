@@ -1,7 +1,8 @@
 package May_2023;
-import java.util.Arrays;
+import java.util.*;
 //Date: 24th May 2023
 public class Kth_Largest_Element_In_A_Stream {
+    //Attempt 1
     //Runtime: 234ms, Memory: 51.3MB
     public class KthLargest{
         int[] elements;
@@ -22,5 +23,30 @@ public class Kth_Largest_Element_In_A_Stream {
             return OneElementLonger[n+1-findAt];
 
         }
+
     }
+    //Attempt 2
+    //Time Limit Exceeded!
+    public class KthLargest_2{
+        LinkedList<Integer> elements;
+        int size;
+        int findAt;
+        public KthLargest_2(int k, int[] nums) {
+            size=nums.length;
+            Arrays.parallelSort(nums);
+            elements=new LinkedList<>();
+            for(int i=0;i<size;i++)elements.add(nums[i]);
+            findAt=k;
+        }
+        public int add(int val) {
+            int i=size-1;
+            while(i>=0 && elements.get(i)>val)i--;
+            elements.add(i+1,val);
+            size+=1;
+            return elements.get(size-findAt);
+
+        }
+
+    }
+
 }
