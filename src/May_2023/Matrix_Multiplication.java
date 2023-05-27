@@ -1,6 +1,17 @@
 package May_2023;
 
 public class Matrix_Multiplication {
+    private static int[][] matrixMulti_FewerCacheMisses(int[][] a, int[][] b){
+        int[][] result = new int[a.length][b[0].length];
+        for(int i=0;i<a.length;i++){
+            for(int k=0;k<a.length;k++) {
+                for(int j=0;j<b[0].length;j++){
+                    result[i][j]+=a[i][k]*b[k][j];
+                }
+            }
+        }
+        return result;
+    }
     private int[][] multiplicationWrapper(int[][] a, int[][]b){
         int[][] result = new int[a.length][b[0].length];
         for(int i=0;i<a.length;i++){
@@ -36,8 +47,12 @@ public class Matrix_Multiplication {
                 {101,325}
         };
         int[][] result=new Matrix_Multiplication().MatrixMultiplier(matrix1,matrix2);
-        for(int i=0;i< result.length;i++){
-            System.out.println(java.util.Arrays.toString(result[i]));
+        for (int[] value : result) {
+            System.out.println(java.util.Arrays.toString(value));
+        }
+        int[][] result_Alt=matrixMulti_FewerCacheMisses(matrix1, matrix2);
+        for (int[] ints : result_Alt) {
+            System.out.println(java.util.Arrays.toString(ints));
         }
     }
 }
