@@ -30,6 +30,40 @@ public class ImplementingDFS {
             }
         }
     }
+    public static HashMap<Integer,ArrayList<int[]>> connectedComponents(HashMap<Integer,ArrayList<Integer>> adjMatrix){
+        int numOfNodes = adjMatrix.size();
+        int[] visited = new int[numOfNodes];
+        int[] connectedComponents= new int[numOfNodes];
+        int[] compNum ={0};
+        HashMap<Integer,ArrayList<int[]>> componentCollector = new HashMap<>();
+        for(int i:adjMatrix.keySet()){
+            if(visited[i-1]==0 && connectedComponents[i-1]==0){
+                visited[i-1]++;
+                compNum[0]++;
+                ArrayList<int[]> edgeCollector = new ArrayList<>();
+                DOJ(i,adjMatrix,compNum,connectedComponents,visited, edgeCollector);
+                if(edgeCollector.isEmpty()){
+                    componentCollector.put(compNum[0],new ArrayList<>(Arrays.asList(new int[]{i})));
+                }else{
+                    componentCollector.put(compNum[0],edgeCollector);
+                }
+
+            }
+        }
+        return componentCollector;
+    }
+    public static void DOJ(int edge, HashMap<Integer,ArrayList<Integer>> adjMatrix, int[] compNum,
+                                                        int[] connectedComponents, int[] visited, ArrayList<int[]> edgeCollector){
+
+        for(int i: adjMatrix.get(edge)){
+            if(visited[i-1]==0){
+                edgeCollector.add(new int[]{edge,i});
+                visited[i-1]++;
+                connectedComponents[i-1]=compNum[0];
+                DOJ(i,adjMatrix,compNum,connectedComponents,visited,edgeCollector);
+            }
+        }
+    }
     public static void main(String...args){
         ArrayList<String> keeper= new ArrayList<>();
         keeper.add("1_2");
@@ -59,6 +93,33 @@ public class ImplementingDFS {
             'E': ['B', 'F'],          = 5,{2,6}
             'F': ['C', 'E']           = 6,{3,5}
         }
+        */
+        HashMap<Integer, ArrayList<Integer>> adjList = new HashMap<>();
+        adjList.put(1, new ArrayList<>(Arrays.asList(2, 3)));
+        adjList.put(2, new ArrayList<>(Arrays.asList(1, 3)));
+        adjList.put(3, new ArrayList<>(Arrays.asList(1, 2)));
+        adjList.put(4, new ArrayList<>(Arrays.asList(5)));
+        adjList.put(5, new ArrayList<>(Arrays.asList(4)));
+        adjList.put(6, new ArrayList<>(Arrays.asList()));
+        adjList.put(7, new ArrayList<>(Arrays.asList(8, 9)));
+        adjList.put(8, new ArrayList<>(Arrays.asList(7, 9)));
+        adjList.put(9, new ArrayList<>(Arrays.asList(7, 8)));
+        adjList.put(10, new ArrayList<>(Arrays.asList()));
+        var result_1 = connectedComponents(adjList);
+        for(int i:result_1.keySet()){
+            System.out.print(i + "->");
+            for(int[] j:result_1.get(i)){
+                System.out.print(Arrays.toString(j)+", ");
+            }
+            System.out.println();
+
+        }
+        /*
+        1->[1, 2], [2, 3],
+        2->[4, 5],
+        3->[6],
+        4->[7, 8], [8, 9],
+        5->[10],
         */
 
     }
