@@ -100,6 +100,39 @@ public class Searching_Sorting {
         arr[j]=pivot;
         return j;
     }
+    //45ms solution on LeetCode
+    public static void mergeSort(int[] arr){
+        if(arr.length<=1)return;
+        int mid = Math.floorDiv(arr.length,2);
+        int[] left = new int[mid];
+        int[] right = new int[arr.length-mid];
+        System.arraycopy(arr, 0, left, 0, mid);
+        System.arraycopy(arr,mid,right,0,right.length);
+        mergeSort(left);
+        mergeSort(right);
+        merge(left,right,arr);
+
+    }
+    public static void merge(int[] left, int[] right, int[] arr){
+        int a = 0;
+        int b = 0;
+        int leftLen = left.length;
+        int rightLen = right.length;
+        int arrLen = arr.length;
+        while(a+b<arrLen){
+            //int temp = arr[a+b];
+            if(b==rightLen || (a<leftLen && left[a]<right[b])){
+                arr[a+b]=left[a];
+                //left[a]=temp; //This is not needed, it's at an index that is no longer accessible
+                a++;
+            }else{
+                arr[a+b]=right[b];
+                //right[b]=temp; //This is not needed, it's at an index that is no longer accessible
+                b++;
+            }
+        }
+
+    }
     public static void main(String...args){
         int[] testArray_1 = new int[]{3, 5, 7, 9, 12, 15, 18, 21, 23, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55};
         System.out.println(new Searching_Sorting().BinarySearch(testArray_1,49)); //17
@@ -126,5 +159,23 @@ public class Searching_Sorting {
         int[] testArray_7 = new int[]{45, 12, 67, 89, 34, 23, 90, 11, 56, 78, 3, 6, 9, 15, 18, 21, 24, 27, 30, 33};
         quickSort(testArray_7);
         System.out.println(Arrays.toString(testArray_7));
+
+        System.out.println("==========================================================================");
+        int[] testArray_8 ={45, 12, 67, 89, 34, 23, 90, 11, 56, 78, 3, 6, 9, 15, 18, 21, 24, 27, 30, 33};
+        mergeSort(testArray_8);
+        System.out.println(Arrays.toString(testArray_8));
+
+        int[] testArray_9 = {199, -198, 197, -196, 195, -194, 193, -192, 191, -190, 189,
+                -188, 187, -186, 185, -184, 183, -182, 181, -180, 179, -178, 177, -176,
+                175, -174, 173, -172, 171, -170, 169, -168, 167, -166, 165, -164, 163, -162,
+                161, -160, 159, -158, 157,-156 ,155 ,-154 ,153 ,-152 ,151 ,-150 , 149 ,-148
+                ,147 ,-146 ,145 ,-144 ,143 ,-142 ,141 ,-140 , 139 ,-138 ,137 ,-136 ,135 ,-134
+                ,133 ,-132 ,131 ,-130 , 129 ,-128 ,127 ,-126 ,125 ,-124 ,123 ,-122 ,121 ,-120 ,
+                119 ,-118 ,117 ,-116 ,115 ,-114 ,113 ,-112 ,111 ,-110 , 109 ,-108 ,107 ,-106 ,105
+                ,-104 ,103 ,-102 ,101 ,-100 , 99,-98 ,97,-96 ,95,-94 ,93,-92 ,91,-90 , 89,-88 ,87,-86
+                ,85,-84 ,83,-82 ,81,-80 , 79,-78 ,77,-76 ,75,-74 ,73,-72 ,71,-70 , 69,-68 ,67,-66 ,65,
+                -64 ,63,-62 ,61,-60 , 59,-58 ,57,-56 ,55,-54 ,53,-52 ,51,-50};
+        mergeSort(testArray_9);
+        System.out.println(Arrays.toString(testArray_9));
     }
 }
