@@ -15,4 +15,17 @@ public class MajorityElement_II {
         }
         return result;
     }
+    /*
+    public List<Integer> majorityElement(int[] nums) {
+        int metric = nums.length/3;
+        HashMap<Integer,Integer> record = new HashMap<>();
+        HashSet<Integer> result = new HashSet<>();
+        for(int i:nums){
+            int value = record.getOrDefault(i,0);
+            record.put(i,value+1);
+            if(value+1>metric)result.add(i);
+        }
+        return new ArrayList<Integer>(result);
+    }
+    */
 }
