@@ -194,7 +194,5 @@ public class StringValidation {
         System.out.println(reverseEachWord_Simpler("sally is a great worker"));
         System.out.println(reverseEachWord_Simpler("racer racecar madam"));
         System.out.println(reverseEachWord_Simpler("What can I do today"));
-
-
     }
 }
