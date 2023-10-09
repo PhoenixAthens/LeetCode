@@ -1,4 +1,4 @@
-package LinkedIN_Learning.Java_Algorithms;
+package September_2023;
 
 public class Majority_Element {
     //Runtime: 1ms, Memory: 48.85MB

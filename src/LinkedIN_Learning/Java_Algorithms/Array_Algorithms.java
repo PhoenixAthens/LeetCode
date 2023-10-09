@@ -71,7 +71,28 @@ public class Array_Algorithms {
     }
 
     //Reverse an array
-
+    public static void reverseInPlace(int[] arr){
+        int len = arr.length;
+        for(int i=0;i<len/2;i++){
+            int temp = arr[i];
+            arr[i] = arr[len-1-i];
+            arr[len-i-1]=temp;
+        }
+    }
+    public static void rotateToLeft(int[] arr){
+        int firstElem = arr[0];
+        for(int i=0;i<arr.length-1;i++){
+            arr[i]=arr[i+1];
+        }
+        arr[arr.length-1]=firstElem;
+    }
+    public static void rotateToRight(int[] arr){
+        int lastElem = arr[arr.length-1];
+        for(int i=arr.length-1;i>0;i--){
+            arr[i]=arr[i-1];
+        }
+        arr[0]=lastElem;
+    }
     public static void main(String...args){
         int[] arr = {1,2,3,4,5,6,7};
         var result = linearSearch_2(arr,1);
@@ -88,5 +109,19 @@ public class Array_Algorithms {
         int[] sampleArr2 = {0,-3,-8,-35,40,20,7};
         System.out.println(Arrays.toString(createEvenArray(sampleArr1,sampleArr2)));//[2, -8, 12, -16, 0, -8, 40, 20]
         System.out.println(Arrays.toString(createEvenArray_2(sampleArr1,sampleArr2)));//[2, -8, 12, -16, 0, -8, 40, 20]
+        System.out.println("=".repeat(50));
+        reverseInPlace(sampleArr1);
+        System.out.println(Arrays.toString(sampleArr1));
+        reverseInPlace(sampleArr1);
+        System.out.println("Double reverse: "+Arrays.toString(sampleArr1));
+        System.out.println("=".repeat(50));
+        rotateToLeft(sampleArr1);
+        System.out.println("Arr1 Rotated to left: "+Arrays.toString(sampleArr1));
+        rotateToRight(sampleArr2);
+        System.out.println("Arr2 Rotated to right: "+Arrays.toString(sampleArr2));
+        rotateToRight(sampleArr1);
+        System.out.println("Arr1 Rotated to right: "+Arrays.toString(sampleArr1));
+        rotateToLeft(sampleArr2);
+        System.out.println("Arr2 Rotated to left: "+Arrays.toString(sampleArr2));
     }
 }
