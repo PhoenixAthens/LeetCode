@@ -1,5 +1,7 @@
 package LinkedIN_Learning.Java_Algorithms;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class LinkedList_Algorithms {
@@ -30,7 +32,7 @@ public class LinkedList_Algorithms {
     public static class Node<T>{
         T data;
         Node<T> next;
-        public Node(T data, Node next){
+        public Node(T data, Node<T> next){
             this.data = data;
             this.next = next;
         }
@@ -38,29 +40,69 @@ public class LinkedList_Algorithms {
            this(data,null);
         }
     }
-    public static class CustomLinkedList<T>{
-        Node<T> head;
-        Node<T> current;
-        int size;
-        public CustomLinkedList(){
-            this.size = 0;
+    private static <T> int lengthCalculator(Node<T> node){
+        int size = 0;
+        while(node!=null){
+            node=node.next;
+            size++;
         }
-        public void add(T data){
-            if(size==0){
-                head = new Node<>(data);
-                head.next = this.current;
+        return size;
+    }
+    public static <T> void removeKthNode(Node<T> node, int k){
+        int size = lengthCalculator(node)-1;
+        System.out.println(size);
+        int till = size-k;
+        if(till<0)return;
+        for(int i=0;i<till;i++){
+            node=node.next;
+        }
+        node.next = node.next.next;
+    }
+    public static <T> void ManualLinkedListIterator(Node<T> head ){
+        if(head!=null){
+            while(head!=null){
+                System.out.print(head.data+", ");
+                head=head.next;
             }
-            current = new Node<>(data);
-            current = current.next;
-            size+=1;
+            System.out.println();
         }
+    }
+    public static <T> void setHalfManualLinkedListNull(Node<T> head){
+        if(head!=null){
+            Node<T> fast = head;
+            Node<T> slow = head;
+            while(fast!=null && fast.next!=null){
+                fast = fast.next.next;
+                head = slow;
+                slow = slow.next;
+            }
+            head.next=null;
+        }
+    }
+
+    public static class CustomLinkedList<T>{
+        private Node<T> head;
+        private Node<T> tail;
+        int size = 0;
+        public void add(T data){
+            Node<T> node = new Node<>(data,null);
+            if(tail==null){
+                head = node;
+            }else{
+                tail.next = node;
+            }
+            tail=node;
+            size++;
+        }
+        @Override
         public String toString(){
             StringBuffer buff = new StringBuffer();
             Node<T> dumpHead = head;
             buff.append("[");
-            while(dumpHead.next!=null){
+            while(dumpHead!=null){
                 buff.append(dumpHead.data);
-                buff.append(",");
+                dumpHead = dumpHead.next;
+                if(dumpHead!=null) buff.append(",");
             }
             buff.append("]");
             return buff.toString();
@@ -79,6 +121,34 @@ public class LinkedList_Algorithms {
         make2.add(5);
         make2.add(8);
         make2.add(9);
-        System.out.println(make2);
+        while(make2.head!=null){
+            System.out.println(make2.head.data);
+            make2.head=make2.head.next;
+        }
+        //System.out.println(make2);
+        Node<Integer> first = new Node<>(23,new Node<>(46,new Node(90,new Node(120, new Node(1,null)))));
+        ManualLinkedListIterator(first);
+        setHalfManualLinkedListNull(first);
+        ManualLinkedListIterator(first);
+        Node<Integer> second = new Node<>(23,new Node<>(46,new Node(90,new Node(120, new Node(1,null)))));
+        removeKthNode(second,4);
+        ManualLinkedListIterator(second);
+        removeKthNode(second,1);
+        ManualLinkedListIterator(second);
+        removeKthNode(second,4);
+        ManualLinkedListIterator(second);
+        ArrayList<Integer> mi = new ArrayList<>();
+        mi.add(2);
+        mi.add(5);
+        mi.add(9);
+        mi.stream().map(x-> Arrays.asList(x-1,x,x+1)).forEach(System.out::println);
+        /*[1, 2, 3]
+        [4, 5, 6]
+        [8, 9, 10]*/
+
+
+
+
+
     }
 }
