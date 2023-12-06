@@ -1,12 +1,12 @@
 package September_2023;
 
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 public class Is_Subsequence {
     //Enhanced for-loop takes more space than traditional for loop
     //Enhanced For loop -> runtime 0ms, memory 40.49 MB
     //Traditional For loop -> runtime 0ms, memory 40.20 MB
-    public boolean isSubsequence(@NotNull String s, @NotNull String t) {
+    public boolean isSubsequence(String s, String t) {
         char[] fromT = t.toCharArray();
         char[] fromS = s.toCharArray();
         if(fromS.length > fromT.length)return false;

@@ -37,7 +37,7 @@ public class SingleNumber {
     public int singleNumber_FinalAttempt(int[] nums){
         HashMap<Integer,Integer> map=new HashMap<>();
         for(int i:nums){
-            var value=map.remove(i);
+            Integer value=map.remove(i);
             if(value==null){
                 map.put(i,1);
             }

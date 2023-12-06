@@ -1,7 +1,4 @@
 package November_2022;
-
-import com.sun.source.tree.Tree;
-
 public class CountCompleteTreeNodes {
     //Time: 0ms beats 100%, Memory: 45.2MB beats 56.82%
     public static class TreeNode {

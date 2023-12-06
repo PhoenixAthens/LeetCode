@@ -27,9 +27,9 @@ public class OptimalPartitionOfString {
         return listOF.size();
     }
     public static void main(String...args){
-        var value=new OptimalPartitionOfString().partitionString("abacaba");
-        var value2=new OptimalPartitionOfString().partitionString("ssssss");
-        System.out.println(value);
-        System.out.println(value2);
+        /*var value=new OptimalPartitionOfString().partitionString("abacaba");
+        var value2=new OptimalPartitionOfString().partitionString("ssssss");*/
+        /*System.out.println(value);
+        System.out.println(value2);*/
     }
 }

@@ -26,8 +26,8 @@ public class IntersectionOfTwoArrays_II {
         return result;
     }
     public static void main(String...args){
-        var result1=new IntersectionOfTwoArrays_II().intersect(new int[]{1,2,2,1}, new int[]{2,2});
-        var result2=new IntersectionOfTwoArrays_II().intersect(new int[]{4,9,5},new int[]{9,4,9,8,4});
+        int[] result1=new IntersectionOfTwoArrays_II().intersect(new int[]{1,2,2,1}, new int[]{2,2});
+        int[] result2=new IntersectionOfTwoArrays_II().intersect(new int[]{4,9,5},new int[]{9,4,9,8,4});
         System.out.println(Arrays.toString(result1));
         System.out.println(Arrays.toString(result2));
     }

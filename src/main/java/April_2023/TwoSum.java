@@ -6,7 +6,7 @@ public class TwoSum {
         HashMap<Integer,Integer> map=new HashMap<>();
         for(int i=0;i<nums.length;i++){
             int remain=target-nums[i];
-            var fromMap=map.get(remain);
+            Integer fromMap=map.get(remain);
             if(fromMap!=null){
                 return new int[]{i,fromMap};
             }

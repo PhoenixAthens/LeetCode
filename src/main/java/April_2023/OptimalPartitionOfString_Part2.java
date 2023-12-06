@@ -26,8 +26,8 @@ public class OptimalPartitionOfString_Part2 {
         return count+1;
     }
     public static void main(String...args){
-        var value=new OptimalPartitionOfString_Part2().partitionString("abacaba");
-        var value2=new OptimalPartitionOfString_Part2().partitionString("ssssss");
+        int value=new OptimalPartitionOfString_Part2().partitionString("abacaba");
+        int value2=new OptimalPartitionOfString_Part2().partitionString("ssssss");
         System.out.println(value);
         System.out.println(value2);
     }

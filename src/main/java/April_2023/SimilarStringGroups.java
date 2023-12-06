@@ -53,8 +53,8 @@ public class SimilarStringGroups {
     public static void main(String...args){
         //var value1=new SimilarStringGroups().numSimilarGroups(new String[]{"tars","rats","arts","star"});
         //var value2=new SimilarStringGroups().numSimilarGroups(new String[]{"omv","ovm"});
-        var value3=new SimilarStringGroups().numSimilarGroups(new String[]{"kccomwcgcs","socgcmcwkc","sgckwcmcoc","coswcmcgkc","cowkccmsgc","cosgmccwkc","sgmkwcccoc","coswmccgkc","kowcccmsgc","kgcomwcccs"});
-        var value4=new SimilarStringGroups().numSimilarGroups(new String[]{"abc","acb","bac"});
+        int value3=new SimilarStringGroups().numSimilarGroups(new String[]{"kccomwcgcs","socgcmcwkc","sgckwcmcoc","coswcmcgkc","cowkccmsgc","cosgmccwkc","sgmkwcccoc","coswmccgkc","kowcccmsgc","kgcomwcccs"});
+        int value4=new SimilarStringGroups().numSimilarGroups(new String[]{"abc","acb","bac"});
         System.out.println(value3);
     }
     /* Bing's solution: 114ms beats 44.66%, Memory: 43MB beats 5.73%
