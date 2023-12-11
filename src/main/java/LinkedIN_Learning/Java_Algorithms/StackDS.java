@@ -48,6 +48,20 @@ public class StackDS {
         }
         while(!stack.isEmpty())System.out.println(stack.pop()+" --> "+-1);
     }
+
+    public static boolean matchingParenthesis(String input){
+        char[] arr = input.toCharArray();
+        Stack<Character> stack = new Stack<>();
+        for(char a: arr){
+            if(a=='('){
+                stack.push(a);
+            }else if(a==')'){
+               if(stack.isEmpty())return false;
+               else stack.pop();
+            }
+        }
+        return stack.isEmpty();
+    }
     public static void main(String...args){
         Stack<String> callStack = new Stack<>();
         System.out.println("START main");
@@ -87,6 +101,21 @@ public class StackDS {
         // Test case 6: Normal case, single element
         System.out.println("Test case 6:");
         nextGreaterElement(new int[]{2});
+
+        //Testing matching parens
+        System.out.println(matchingParenthesis("((algorithm()))")); //true
+        System.out.println(matchingParenthesis("()(algorithm())")); //true
+        System.out.println(matchingParenthesis("((algorithm))")); //true
+        System.out.println(matchingParenthesis("(algorithm)")); //true
+        System.out.println(matchingParenthesis("(algorithm(")); //false
+        System.out.println(matchingParenthesis(")algorithm)")); //false
+        System.out.println(matchingParenthesis(")algorithm(")); //false
+        System.out.println(matchingParenthesis("algorithm((")); //false
+        System.out.println(matchingParenthesis("(algorithm")); //false
+        System.out.println(matchingParenthesis("((algorithm)")); //false
+
+
+
     }
 
 }
