@@ -80,7 +80,7 @@ public class Max_Heap {
         testRun.addElement(6);
         testRun.addElement(7);*/
 
-        ArrayList<Integer> sortedArray=new ArrayList<>();
+        /*ArrayList<Integer> sortedArray=new ArrayList<>();
         while(!testRun.isEmpty()){
             sortedArray.add(testRun.ExtractMax());
         }
@@ -90,7 +90,7 @@ public class Max_Heap {
         Arrays.parallelSort(arr);
         System.out.println(Arrays.toString(arr));
         time2=System.currentTimeMillis()-time2;
-        System.out.printf("Time1: %d, Time2: %d",time,time2);
+        System.out.printf("Time1: %d, Time2: %d",time,time2);*/
 
     }
 }

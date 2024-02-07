@@ -27,7 +27,8 @@ public class MaximumLengthOfaConcatenatedStringWithUniqueCharacters {
         String prevPart=null;
         String lasPart=null;
         for(int i = 0; i< arr.size(); i++){
-            prevPart=arr.get(i);lasPart=arr.get(i);
+            prevPart=arr.get(i);
+            lasPart=arr.get(i);
             String a= arr.get(i);
             if(!containDuplicates(a,null)) {
                 for (int j = i + 1; j < arr.size(); j++) {
